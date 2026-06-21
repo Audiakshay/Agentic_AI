@@ -16,6 +16,7 @@ function App() {
   const [agentType, setAgentType] = useState("reviewer");
   const [prompt, setPrompt] = useState("");
   const [loading, setLoading] = useState(false);
+  console.log(agentType, "////");
   const sendMessage = async (prompt) => {
     if (!prompt.trim()) return;
 

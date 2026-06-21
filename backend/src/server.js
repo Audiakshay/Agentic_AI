@@ -8,7 +8,6 @@ const axios = require("axios");
 const SYSTEM_PROMPTS = require("./services/groqService");
 
 dotenv.config();
-console.log(JSON.stringify(SYSTEM_PROMPTS), "///sys");
 const app = express();
 
 app.use(cors());

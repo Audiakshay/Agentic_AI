@@ -16,10 +16,11 @@ body {
 }
 
 .sidebar {
-  width: 280px;
+  width: 300px;
   background: #1e293b;
   padding: 20px;
   border-right: 1px solid #334155;
+  flex-shrink: 0;
 }
 
 .sidebar h2 {
@@ -57,15 +58,9 @@ body {
 }
 
 .main {
-  flex: 1;
   display: flex;
   flex-direction: column;
-}
-
-.chat-window {
-  flex: 1;
-  padding: 30px;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .message {
@@ -160,6 +155,131 @@ body {
 /* for scroll after response is received */
 .chat-window {
   flex: 1;
+  padding: 20px;
   overflow-y: auto;
-  height: 100%;
+}
+
+.message-row {
+  display: flex;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.user-row {
+  justify-content: flex-end;
+}
+
+.ai-row {
+  justify-content: flex-start;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #2563eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+.message-bubble {
+  max-width: 75%;
+  padding: 22px;
+  border-radius: 18px;
+  word-break: break-word;
+}
+
+.message-bubble ol {
+  padding-left: 28px;
+  margin: 15px 0;
+}
+
+.message-bubble ol li {
+  padding-left: 8px;
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+.message-bubble strong {
+  color: #60a5fa;
+  font-weight: 700;
+}
+
+.message-bubble h3 {
+  color: #60a5fa;
+  font-size: 18px;
+}
+
+.user-row .message-bubble {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+
+  color: white;
+}
+
+.ai-row .message-bubble {
+  background: #1e293b;
+
+  color: white;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.agent-name {
+  color: #94a3b8;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.message-bubble ul {
+  padding-left: 20px;
+}
+
+.message-bubble li {
+  margin-bottom: 8px;
+}
+
+.message-bubble pre {
+  background: #0f172a;
+  border-radius: 12px;
+  padding: 15px;
+  overflow-x: auto;
+  margin-top: 12px;
+}
+
+.message-bubble code {
+  font-family: Consolas, monospace;
+}
+
+/* markdown component */
+.message-bubble h1,
+.message-bubble h2,
+.message-bubble h3,
+.message-bubble h4 {
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+.message-bubble p {
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+.message-bubble ol {
+  padding-left: 32px;
+  margin: 16px 0;
+}
+
+.message-bubble ul {
+  padding-left: 32px;
+  margin: 16px 0;
+}
+
+.message-bubble li {
+  margin-bottom: 12px;
+  line-height: 1.8;
 }
